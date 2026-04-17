@@ -1,21 +1,12 @@
 import { ThemeProvider } from "next-themes";
 import {
-  WaitlistForm,
   WaitlistWrapper,
   MeshGradient,
 } from "@/components/waitlist";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
-  const handleSubmit = async (
-    email: string
-  ): Promise<{ success: boolean; error?: string }> => {
-    // Simulate API call
-    console.log("Submitting email:", email);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    // Demo: always succeed
-    return { success: true };
-  };
+  const navigate = useNavigate();
 
   return (
     <ThemeProvider
@@ -60,17 +51,14 @@ const Index = () => {
                     со схожими желаниями и без лишних условностей.
                   </p>
                 </div>
-                <div className="px-1 flex flex-col w-full self-stretch">
-                  <WaitlistForm
-                    onSubmit={handleSubmit}
-                    placeholder="Введите ваш email"
-                    buttonCopy={{
-                      idle: "Получить доступ",
-                      loading: "Отправка...",
-                      success: "Вы в списке! 🔥",
-                    }}
-                  />
-                  <p className="text-xs text-slate-10 text-center mt-3">
+                <div className="px-1 flex flex-col w-full self-stretch gap-3">
+                  <button
+                    onClick={() => navigate("/register")}
+                    className="w-full h-11 rounded-full bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 text-white font-medium text-sm transition-all"
+                  >
+                    Получить ранний доступ 🔥
+                  </button>
+                  <p className="text-xs text-slate-10 text-center">
                     Только для лиц старше 18 лет. Без спама — только важное.
                   </p>
                 </div>
