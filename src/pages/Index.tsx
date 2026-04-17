@@ -26,7 +26,7 @@ const Index = () => {
     >
       <div className="antialiased max-w-screen min-h-svh bg-slate-1 text-slate-12">
         <MeshGradient
-          colors={["#001c80", "#1ac7ff", "#04ffb1", "#ff1ff1"]}
+          colors={["#6b0033", "#c2004e", "#ff2d78", "#ff8c42"]}
           style={{
             position: "fixed",
             top: 0,
@@ -42,31 +42,37 @@ const Index = () => {
               <WaitlistWrapper
                 logo={{
                   src: "/logo.svg",
-                  alt: "Launchpad",
+                  alt: "Desire",
                 }}
-                copyright="При поддержке"
-                copyrightLink={{ text: "Ваша компания", href: "#" }}
+                copyright="18+ только для взрослых"
+                copyrightLink={{ text: "Присоединяйся", href: "#" }}
                 showThemeSwitcher={true}
               >
-                <div className="space-y-1">
+                <div className="space-y-2">
+                  <div className="text-xs font-semibold uppercase tracking-widest text-pink-500 mb-1">
+                    🔥 Скоро запуск
+                  </div>
                   <h1 className="text-2xl sm:text-3xl font-medium text-slate-12 whitespace-pre-wrap text-pretty">
-                    Лист ожидания
+                    Дэйтинг без границ.{"\n"}Только для взрослых.
                   </h1>
                   <p className="text-slate-10 tracking-tight text-pretty">
-                    Узнайте первыми о запуске. Получите ранний доступ и
-                    эксклюзивные обновления.
+                    Первое приложение, где 18+ интересы — это норма. Найди людей
+                    со схожими желаниями и без лишних условностей.
                   </p>
                 </div>
                 <div className="px-1 flex flex-col w-full self-stretch">
                   <WaitlistForm
                     onSubmit={handleSubmit}
-                    placeholder="Введите email"
+                    placeholder="Введите ваш email"
                     buttonCopy={{
-                      idle: "Записаться",
+                      idle: "Получить доступ",
                       loading: "Отправка...",
-                      success: "Готово!",
+                      success: "Вы в списке! 🔥",
                     }}
                   />
+                  <p className="text-xs text-slate-10 text-center mt-3">
+                    Только для лиц старше 18 лет. Без спама — только важное.
+                  </p>
                 </div>
               </WaitlistWrapper>
             </main>
